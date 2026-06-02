@@ -222,6 +222,8 @@ header {
   width: 100%;
   height: 220px;
   object-fit: cover;
+
+  
   background: #0000
     radial-gradient(
       circle,
