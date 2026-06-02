@@ -438,3 +438,17 @@ header {
     z-index: -1;
   }
 }
+
+.project-all {
+  margin-top: 80px;
+  backdrop-filter: blur(8px); 
+}
+
+.project-all h2 {
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
