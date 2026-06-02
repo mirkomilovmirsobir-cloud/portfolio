@@ -55,7 +55,7 @@ ul {
 header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 5;
 }
 
 .navbar {
@@ -222,8 +222,6 @@ header {
   width: 100%;
   height: 220px;
   object-fit: cover;
-
-  
   background: #0000
     radial-gradient(
       circle,
@@ -240,52 +238,6 @@ header {
 
 .img h3 {
   color: #ffffff;
-}
-
-.project-card {
-  width: 350px;
-  height: 500px;
-  border-radius: 10px;
-}
-
-.project-img img {
-  width: 350px;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.p-img {
-  width: 60px;
-  height: 60px;
-}
-
-.project-ltitle h3 {
-  font-weight: 700;
-  font-size: 35px;
-  text-align: center;
-}
-.project-title {
-  margin-top: -250px;
-  opacity: 0;
-}
-
-.links {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.project-card:hover .project-title {
-  opacity: 1;
-  backdrop-filter: blur(8px);
-  transition: all 0.5s linear;
-}
-
-.project-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-  padding-top: 50px;
 }
 
 .p-all h2 {
@@ -341,4 +293,148 @@ header {
   color: aqua;
   font-size: 32px;
   font-weight: 400;
+}
+
+.flip-card-front img {
+  width: 350px;
+  height: 415px;
+  border-radius: 1rem;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 350px;
+  height: 415px;
+  perspective: 1000px;
+  font-family: sans-serif;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transition-timing-function: cubic-bezier(0.61, 0.98, 0.48, 1.01);
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotate(180deg) rotateX(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  background: #fff;
+  color: #000;
+}
+
+.flip-card-back {
+  background: linear-gradient(90.35deg, #2563eb 0.36%, #d946ef 201.02%);
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+.p-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.p-img {
+  width: 50px;
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* From Uiverse.io by Z4drus */ 
+.container-ld {
+  --uib-size: 100px;
+  --uib-color: rgb(51, 172, 241);
+  --uib-speed: 1.4s;
+  --uib-bg-opacity: 0.1;
+  height: var(--uib-size);
+  width: var(--uib-size);
+  transform-origin: center;
+  overflow: visible;
+}
+
+.car {
+  fill: none;
+  stroke: var(--uib-color);
+  stroke-dasharray: 15, 85;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: travel var(--uib-speed) linear infinite;
+  will-change: stroke-dasharray, stroke-dashoffset;
+  transition: stroke 0.5s ease;
+}
+
+.track {
+  stroke: var(--uib-color);
+  opacity: var(--uib-bg-opacity);
+  transition: stroke 0.5s ease;
+}
+
+@keyframes travel {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+
+.load {
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: off 5s forwards;
+}
+
+@keyframes off {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    z-index: -1;
+  }
 }
