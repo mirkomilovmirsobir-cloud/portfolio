@@ -444,11 +444,18 @@ header {
   backdrop-filter: blur(8px); 
 }
 
+#project {
+  padding:0px 0px  0px 60px;
+}
+
+.project-all {
+  padding: 30px 30px 30px 30px;
+}
+
 .project-all h2 {
   text-align: center;
   color: white;
   font-weight: 700;
   font-size: 32px;
   margin-bottom: 30px;
-  margin-top: 30px;
 }
